@@ -19,10 +19,10 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ]
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "exclude": [
     "node_modules",

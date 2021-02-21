@@ -8,6 +8,6 @@ export const dark: Theme = {
 
   gradientPrimary: 'linear-gradient(40deg, #8983F7, #A3DAFB 70%)',
   themeBgSize: 'calc(max(100vw, 100vh) * 4)',
-  themeBgTop: 'calc(max(100vw, 100vh) * -2 + 2rem + 15px)',
-  themeBgRight: 'calc(max(100vw, 100vh) * -2 + 2rem + 25px)',
+  themeBgTop: 'calc(max(100vw, 100vh) * -2 + 50px)',
+  themeBgRight: 'calc(max(100vw, 100vh) * -2 + 70px)',
 }

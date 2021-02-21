@@ -40,6 +40,6 @@ export const global = css({
   ...applyTheme('light'),
   ...applyTheme('dark'),
   [':root']: {
-    '--transitionTiming': '175ms ease-in-out'
+    '--transitionTiming': '125ms ease-in-out'
   },
 })
