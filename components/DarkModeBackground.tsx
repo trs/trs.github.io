@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import { theme } from '../theme/themes';
 
-export const Background = styled.div`
+export const DarkModeBackground = styled.div`
   z-index: -2;
   position: fixed;
   top: ${theme.themeBgTop};

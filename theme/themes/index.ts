@@ -18,6 +18,11 @@ export const theme = {
   themeBgSize: 'var(--themeBgSize)',
   themeBgTop: 'var(--themeBgTop)',
   themeBgRight: 'var(--themeBgRight)',
+
+  bgCircleOneStart: 'var(--bgCircleOneStart)',
+  bgCircleOneEnd: 'var(--bgCircleOneEnd)',
+  bgCircleTwoStart: 'var(--bgCircleTwoStart)',
+  bgCircleTwoEnd: 'var(--bgCircleTwoEnd)',
 };
 
 export type Theme = {

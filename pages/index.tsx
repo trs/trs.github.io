@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
-import { Background } from '~/components/DarkModeBackground';
+import { DarkModeBackground } from '~/components/DarkModeBackground';
+import { BackgroundGradient } from '~/components/BackgroundGradient';
 import {HeaderComponent} from '~/components/Header';
 import {CoffeeConversionComponent} from '~/features/CoffeeConversion';
 
@@ -10,10 +11,13 @@ const IndexPage = () => {
 
   return (
     <Container>
-      <Background />
+      <DarkModeBackground />
+
+      <BackgroundGradient />
+
       <HeaderComponent />
 
-      <CoffeeConversionComponent>
+      {/* <CoffeeConversionComponent>
         <Content>
 
           <Paragraph style={{alignSelf: 'flex-start'}}>Hey, I'm</Paragraph>
@@ -22,7 +26,7 @@ const IndexPage = () => {
           <Paragraph style={{alignSelf: 'flex-end'}}>I write code.</Paragraph>
         </Content>
 
-      </CoffeeConversionComponent>
+      </CoffeeConversionComponent> */}
     </Container>
   );
 };
@@ -30,10 +34,10 @@ const IndexPage = () => {
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 `;
 
 const Content = styled.main`
