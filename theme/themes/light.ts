@@ -1,7 +1,7 @@
 import { Theme } from ".";
 
 export const light: Theme = {
-  fontPrimary: '#111',
+  fontPrimary: '#1B1920',
 
   bgPrimary: '#EEEFF1',
   bgSecondary: '#E0E1E4',

@@ -1,19 +1,20 @@
 import styled from '@emotion/styled';
+import { FC } from 'react';
 import { theme } from '~/theme/themes';
 
 import {DarkModeToggleComponent} from '../components/DarkModeToggle';
 
-export const HeaderComponent = () => {
+export const HeaderComponent: FC = (props) => {
   return (
-    <HeaderContainer>
+    <HeaderContainer {...props}>
       <Title>Tyler Stewart</Title>
       <Nav>
         <NavList>
           <NavItem>
-            <NavLink href="#" target="_blank">Github</NavLink>
+            <NavLink href="https://github.com/trs" target="_blank">Github</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" target="_blank">Linkedin</NavLink>
+            <NavLink href="https://www.linkedin.com/in/hello-trs/" target="_blank">Linkedin</NavLink>
           </NavItem>
         </NavList>
       </Nav>
@@ -33,9 +34,10 @@ const HeaderContainer = styled.header`
 
   color: ${theme.fontPrimary};
   font-family: Inter, Arial, Helvetica, sans-serif;
-  transition: color var(--transitionTiming);
+  transition: all var(--transitionTiming);
   font-size: 1.0rem;
   font-weight: 600;
+  text-shadow: 0 0 2px ${theme.bgPrimary};
 `;
 
 const Title = styled.p`
@@ -67,6 +69,12 @@ const NavLink = styled.a`
   text-decoration: none;
   font-size: inherit;
   font-weight: inherit;
+
+  &:hover {
+    background: ${theme.gradientPrimary};
+    background-clip: text;
+    text-fill-color: transparent;
+  }
 `;
 
 const Toggle = styled(DarkModeToggleComponent)`
