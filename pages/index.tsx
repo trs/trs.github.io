@@ -1,21 +1,22 @@
 import styled from '@emotion/styled';
 
 import { DarkModeBackground } from '~/components/DarkModeBackground';
-import { BackgroundGradient } from '~/components/BackgroundGradient';
+import { BubbleLeft, BubbleRight } from '~/components/BackgroundGradient';
 import {HeaderComponent} from '~/components/Header';
 
 import { theme } from '~/theme/themes';
 
 const IndexPage = () => {
-
   return (
     <Container>
       <DarkModeBackground />
       <WrappedHeaderComponent />
 
       <Content>
-        <BackgroundGradient />
-        <Title>I code stuff</Title>
+        <BubbleLeft from={theme.bgCircleOneStart} to={theme.bgCircleOneEnd} />
+        <BubbleRight from={theme.bgCircleTwoStart} to={theme.bgCircleTwoEnd} />
+
+        <Title>I write code.</Title>
       </Content>
 
     </Container>
@@ -29,6 +30,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 const WrappedHeaderComponent = styled(HeaderComponent)`
@@ -43,18 +45,18 @@ const Content = styled.main`
   justify-content: center;
   align-items: center;
 
-  width: 500px;
-  margin: 0 auto;
+  animation: none !important;
 `;
 
 const Title = styled.h1`
   color: ${theme.fontPrimary};
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 600;
-  font-size: 4rem;
+  font-size: clamp(1.5rem, -0.875rem + 10vw, 4rem);
   padding: 1rem 4rem;
   text-shadow: 0 0 6px ${theme.bgPrimary};
   transition: all var(--transitionTiming);
 `;
+
 
 export default IndexPage;

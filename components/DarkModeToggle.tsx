@@ -25,8 +25,8 @@ const CheckboxContainer = styled.label`
   position: relative;
   display: inline-block;
   border-radius: 60px;
-  height: 30px;
-  width: 50px;
+  height: 1.5rem;
+  width: 2.5rem;
 
   transition: background-color var(--transitionTiming);
   /* box-shadow: inset 0 1px 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, 0.04), 0 4px 9px hsla(0, 0%, 0%, 0.13), 0 3px 3px hsla(0, 0%, 0%, 0.05); */
@@ -38,8 +38,8 @@ const CheckboxIndicator = styled.span`
   position: absolute;
   background: ${theme.gradientPrimary};
 
-  width: 30px;
-  height: 30px;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
 
   transition: transform var(--transitionTiming);
@@ -72,6 +72,6 @@ const CheckboxIndicator = styled.span`
   }
 
   ${Input}:checked ~ & {
-    transform: translateX(20px);
+    transform: translateX(1rem);
   }
 `;

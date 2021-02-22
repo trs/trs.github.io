@@ -49,7 +49,7 @@ const Title = styled.p`
 const Nav = styled.nav`
   display: none;
 
-  @media only screen and (min-width : 400px) {
+  @media only screen and (min-width : 520px) {
     display: initial;
   }
 `;
