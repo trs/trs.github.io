@@ -8,8 +8,8 @@ export const inputs = {
 };
 
 export const outputs = {
-  '💻': 10,
-  '⭐': 10,
+  '💻': 9,
+  '⭐': 8,
   '⚡': 10,
   '💡': 10,
   '💾': 10,
@@ -47,35 +47,40 @@ const falling = keyframes`
     opacity: 0;
   }
   20% {
-    opacity: 0
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  75%, 100% {
     opacity: 0;
-    transform: translate(-50%, 500px);
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 40vh);
   }
 `;
 
 const Emoji = styled.span`
+  z-index: -1;
+  opacity: 0;
   position: absolute;
   pointer-events: none;
-  z-index: -1;
-  font-size: 2.5rem;
+  user-select: none;
+  font-size: clamp(2rem, 0.8750rem + 5.0000vw, 3.5rem);
   left: 50%;
   transform: translateX(-50%);
   animation: ${falling} 3000ms linear infinite;
 `;
 
 export const EmojiIn = styled(Emoji)`
-  top: -400px;
+  top: -30vh;
 `;
 
 export const EmojiOut = styled(Emoji)`
-  animation-delay: 1250ms;
-  top: 0px;
+  animation-delay: 1500ms;
+  top: -5vh;
 `;

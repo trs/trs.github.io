@@ -4,6 +4,8 @@ import { DarkModeBackground } from '~/components/DarkModeBackground';
 import { BubbleLeft, BubbleRight } from '~/components/BackgroundGradient';
 import {HeaderComponent} from '~/components/Header';
 
+import { CoffeeConversionComponent } from '~/features/CoffeeConversion';
+
 import { theme } from '~/theme/themes';
 
 const IndexPage = () => {
@@ -16,7 +18,9 @@ const IndexPage = () => {
         <BubbleLeft from={theme.bgCircleOneStart} to={theme.bgCircleOneEnd} />
         <BubbleRight from={theme.bgCircleTwoStart} to={theme.bgCircleTwoEnd} />
 
-        <Title>I write code.</Title>
+        <CoffeeConversionComponent>
+          <Title>Software Developer</Title>
+        </CoffeeConversionComponent>
       </Content>
 
     </Container>
@@ -52,10 +56,12 @@ const Title = styled.h1`
   color: ${theme.fontPrimary};
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.5rem, -0.875rem + 10vw, 4rem);
-  padding: 1rem 4rem;
+  font-size: clamp(1.25rem, -0.8125rem + 9.1667vw, 4rem);
+  padding: 1rem 2rem;
   text-shadow: 0 0 6px ${theme.bgPrimary};
   transition: all var(--transitionTiming);
+
+  white-space: nowrap;
 `;
 
 
