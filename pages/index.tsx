@@ -3,8 +3,7 @@ import styled from '@emotion/styled';
 import { DarkModeBackground } from '~/components/DarkModeBackground';
 import { BubbleLeft, BubbleRight } from '~/components/BackgroundGradient';
 import {HeaderComponent} from '~/components/Header';
-
-import { CoffeeConversionComponent } from '~/features/CoffeeConversion';
+import { CoffeeConversionComponent } from '~/components/CoffeeConversion';
 
 import { theme } from '~/theme/themes';
 
@@ -58,9 +57,8 @@ const Title = styled.h1`
   font-weight: 600;
   font-size: clamp(1.25rem, -0.8125rem + 9.1667vw, 4rem);
   padding: 1rem 2rem;
-  text-shadow: 0 0 6px ${theme.bgPrimary};
+  text-shadow: 0 0 0.1em ${theme.bgPrimary};
   transition: all var(--transitionTiming);
-
   white-space: nowrap;
 `;
 
