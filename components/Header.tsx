@@ -16,6 +16,9 @@ export const HeaderComponent: FC = (props) => {
           <NavItem>
             <NavLink href="https://www.linkedin.com/in/hello-trs/" target="_blank">Linkedin</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href="./resume" target="_blank">Resume</NavLink>
+          </NavItem>
         </NavList>
       </Nav>
 

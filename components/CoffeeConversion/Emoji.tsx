@@ -4,6 +4,7 @@ import { Keyframes } from '@emotion/serialize';
 import styled from '@emotion/styled';
 
 import { useRandomInterval, random } from '~/hooks/useRandomInterval';
+import { usePrefersReducedMotion } from '~/hooks/usePrefersReducedMotion';
 
 type EmojiOptions = Record<string, number>;
 
@@ -55,21 +56,27 @@ const useEmojis = (interval: number) => {
     }
   };
 
-  const [emojis, setEmojis] = useState<EmojiValue[]>([createEmoji()]);
+  const [emojis, setEmojis] = useState<EmojiValue[]>([]);
 
-  useRandomInterval(() => {
-    const now = Date.now();
-    const emoji = createEmoji();
+  const prefersReducedMotion = usePrefersReducedMotion();
 
-    const nextEmojis = emojis.filter(({createdAt}) => {
-      const delta = now - createdAt;
-      return delta < interval;
-    });
+  useRandomInterval(
+    () => {
+      const now = Date.now();
+      const emoji = createEmoji();
 
-    nextEmojis.push(emoji);
+      const nextEmojis = emojis.filter(({createdAt}) => {
+        const delta = now - createdAt;
+        return delta < interval;
+      });
 
-    setEmojis(nextEmojis);
-  }, interval, interval);
+      nextEmojis.push(emoji);
+
+      setEmojis(nextEmojis);
+    },
+    prefersReducedMotion ? null : interval,
+    prefersReducedMotion ? null : interval
+  );
 
   return emojis;
 }
@@ -136,6 +143,10 @@ const EmojiContainer = styled.div<{interval: number, pos: number}>`
   justify-content: center;
   align-content: center;
   animation: ${falling} ${props => props.interval}ms linear infinite;
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 `;
 
 const Emoji = styled.i<{frames: Keyframes, interval: number}>`
@@ -148,4 +159,8 @@ const Emoji = styled.i<{frames: Keyframes, interval: number}>`
   font-size: clamp(2rem, 0.8750rem + 5.0000vw, 3.5rem);
   animation: ${props => props.frames} ${props => props.interval}ms linear infinite;
   transform: translateY(-100%);
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 `;
